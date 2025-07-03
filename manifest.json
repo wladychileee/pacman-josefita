@@ -1,0 +1,21 @@
+{
+  "name": "Pacman Josefita",
+  "short_name": "Pacman",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#e3f7ff",
+  "theme_color": "#e3f7ff",
+  "description": "Juego Pacman de animales y música para Josefita.",
+  "icons": [
+    {
+      "src": "josefita.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "josefita.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
