@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego para Niños</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e3f7ff">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dedicatoria">Dedicado con mucho amor a <strong>Josefita Saldias Retamal</strong> 💖</div>
+        <h1>¡Juega y Aprende!</h1>
+        <nav>
+    <button onclick="mostrarSeccion('colores')">Colores</button>
+    <button onclick="mostrarSeccion('animales')">Animales</button>
+    <button onclick="mostrarSeccion('ingenio')">Juegos de Ingenio</button>
+    <button onclick="mostrarSeccion('pacman')">Pacman de Frutas</button>
+</nav>
+        <section id="colores" class="seccion">
+    <h2>Elige un color</h2>
+    <div class="colores-botones">
+        <button class="color rojo" onclick="reproducirSonidoColor('rojo')">Rojo</button>
+        <button class="color azul" onclick="reproducirSonidoColor('azul')">Azul</button>
+        <button class="color amarillo" onclick="reproducirSonidoColor('amarillo')">Amarillo</button>
+        <button class="color verde" onclick="reproducirSonidoColor('verde')">Verde</button>
+        <button class="color naranja" onclick="reproducirSonidoColor('naranja')">Naranja</button>
+        <button class="color morado" onclick="reproducirSonidoColor('morado')">Morado</button>
+    </div>
+    <div id="color-sonido"></div>
+</section>
+        <section id="animales" class="seccion" style="display:none">
+    <h2>Descubre los animales</h2>
+    <div class="animales-galeria">
+        <div class="animal">
+    <div class="emoji-animal">🦁</div>
+    <button onclick="reproducirSonidoAnimal('leon')">León</button>
+</div>
+<div class="animal">
+    <div class="emoji-animal">🐶</div>
+    <button onclick="reproducirSonidoAnimal('perro')">Perro</button>
+</div>
+<div class="animal">
+    <div class="emoji-animal">🐱</div>
+    <button onclick="reproducirSonidoAnimal('gato')">Gato</button>
+</div>
+<div class="animal">
+    <div class="emoji-animal">🐷</div>
+    <button onclick="reproducirSonidoAnimal('cerdito')">Cerdito</button>
+</div>
+<div class="animal">
+    <div class="emoji-animal">🦆</div>
+    <button onclick="reproducirSonidoAnimal('pato')">Pato</button>
+</div>
+<div class="animal">
+    <div class="emoji-animal">🐮</div>
+    <button onclick="reproducirSonidoAnimal('vaca')">Vaca</button>
+</div>
+    </div>
+</section>
+        <section id="ingenio" class="seccion" style="display:none">
+    <h2>Juegos de Ingenio</h2>
+</section>
+<section id="pacman" class="seccion" style="display:none">
+    <h2>Pacman de Frutas</h2>
+    <div id="pacman-juego"></div>
+</section>
+    <div class="juego-memoria">
+        <h3>Memoria de Animales</h3>
+        <button onclick="iniciarMemoria()">Iniciar/Reiniciar</button>
+        <div id="memoria-tablero"></div>
+    </div>
+</section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <script src="app.js"></script>
+    <script src="pacman.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('service-worker.js')
+            .then(function(reg) { console.log('Service worker registrado:', reg); })
+            .catch(function(err) { console.log('Error al registrar service worker:', err); });
+        });
+      }
+    </script>
+</body>
+</html>
